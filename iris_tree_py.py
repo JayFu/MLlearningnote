@@ -7,8 +7,6 @@ from sklearn import datasets
 from sklearn.cross_validation import train_test_split
 from sklearn import tree
 
-
-
 iris = datasets.load_iris()
 # 导入鸢尾花数据集
 iris_X = iris.data
