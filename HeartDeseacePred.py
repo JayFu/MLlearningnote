@@ -11,5 +11,4 @@ from _csv import reader
 
 HeartDeseaseData = open(r'/Users/jay_fu/MLlearningnote/Heart.csv','rb')
 reader = csv.reader(HeartDeseaseData)
-
-
+headers=reader.next()  
