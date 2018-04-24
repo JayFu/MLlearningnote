@@ -12,3 +12,15 @@ from _csv import reader
 HeartDeseaseData = open(r'/Users/jay_fu/MLlearningnote/Heart.csv','rb')
 reader = csv.reader(HeartDeseaseData)
 headers=reader.next()  
+# print(headers)  
+  
+featureList=[]  
+labelList=[]  
+  
+for row in reader:  
+    labelList.append(row[len(row)-1])  
+    rowDict={}  
+    for i in range(1,len(row)-1):  
+        rowDict[headers[i]]=row[i]  
+    featureList.append(rowDict)  
+# print(featureList) 
