@@ -24,3 +24,9 @@ for row in reader:
         rowDict[headers[i]]=row[i]  
     featureList.append(rowDict)  
 # print(featureList) 
+
+vec=DictVectorizer()  
+dummyX=vec.fit_transform(featureList).toarray()  
+print("dummyX:"+str(dummyX))  
+print(vec.get_feature_names())  
+print("labelList:"+str(labelList))  
