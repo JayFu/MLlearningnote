@@ -26,7 +26,6 @@ for row in reader:
 
 vec=DictVectorizer()  
 
-
 dummyX=vec.fit_transform(featureList).toarray()  
 print("dummyX:"+str(dummyX))  
 print(vec.get_feature_names())  
