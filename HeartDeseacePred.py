@@ -55,5 +55,3 @@ print("predictedY:"+str(predictedY))
 # 以上是决策树内容
 
 # 随机森林判断
-
-
