@@ -188,7 +188,7 @@ class GeneticAlgorithm:
         return r
 
 if __name__ == '__main__':
-    # bounds = [[-3, 12.1], [4.1, 5.8]]
+    bounds = [[-3, 12.1], [4.1, 5.8]]
     precision = 100000
     algorithm = GeneticAlgorithm(bounds, precision, 0.01, 0.8, 100, 100)
     algorithm.ga()
