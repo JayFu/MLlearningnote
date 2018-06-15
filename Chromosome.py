@@ -4,9 +4,9 @@ import random
 
 class Chromosome:
     def __init__(self, bounds, precision):
-        self.x1 = 1
-        self.x2 = 1
-        self.x3 = 1
+        self.x1 = 0
+        self.x2 = 0
+        self.x3 = 0
 
         self.y = 0
 
@@ -31,18 +31,18 @@ class Chromosome:
 
     def rand_init(self):
         for i in range(self.code_x1_length):
-            self.code_x1 += str(random.randint(0, 1, 2, 3, 4))
+            self.code_x1 += str(random.randint(0, 4))
 
         for i in range(self.code_x2_length):
-            self.code_x2 += str(random.randint(0, 1, 2, 3, 4))
+            self.code_x2 += str(random.randint(0, 4))
         
         for i in range(self.code_x3_length):
-            self.code_x2 += str(random.randint(0, 1, 2, 3, 4))
+            self.code_x2 += str(random.randint(0, 4))
 
     def decoding(self, code_x1, code_x2):
         # self.x1 = self.bounds[0][0] + int(code_x1, 2) * (self.bounds[0][1] - self.bounds[0][0]) / (
         # 2 ** self.code_x1_length - 1)
-        
+
         # self.x2 = self.bounds[1][0] + int(code_x2, 2) * (self.bounds[1][1] - self.bounds[1][0]) / (
         # 2 ** self.code_x2_length - 1)
 
