@@ -52,7 +52,8 @@ def binaryzation_denoise(img2):
 
 def next_batch(batch_count=100, width=CAPTCHA_WIDTH, height=CAPTCHA_HEIGHT):
     global TIME_COUNTER
-    data_dir = '/Users/jay_fu/Catpatch/training/'
+    
+    data_dir = ''
     imgs = os.listdir(data_dir)
     TIME_COUNTER += 1
     if batch_count * TIME_COUNTER > len(imgs): TIME_COUNTER = 0
@@ -85,7 +86,7 @@ def next_batch_validation(batch_count=350, width=CAPTCHA_WIDTH, height=CAPTCHA_H
     batch_x = np.zeros([batch_count, width * height])
     batch_y = np.zeros([batch_count, CAPTCHA_LEN * len(CAPTCHA_LIST)])
     for i in range(batch_count):
-        data_dir = '/Users/jay_fu/Catpatch/validation/'
+        data_dir = ''
         imgs = os.listdir(data_dir)
         text = imgs[i]
         
