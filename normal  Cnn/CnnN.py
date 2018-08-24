@@ -20,10 +20,6 @@ CAPTCHA_HEIGHT = 32
 # CAPTCHA_WIDTH = 89
 CAPTCHA_WIDTH = 90
 
-# # 7.2，根据AlexNet的网络结构调整为224*224
-# CAPTCHA_HEIGHT = 224
-# CAPTCHA_WIDTH = 224
-
 global TIME_COUNTER
 TIME_COUNTER = 0
 
@@ -64,16 +60,8 @@ def next_batch(batch_count=100, width=CAPTCHA_WIDTH, height=CAPTCHA_HEIGHT):
         # if i % 10 == 0 : print(text)
         img = cv2.imread(data_dir + text,cv2.IMREAD_GRAYSCALE)
        
-        # # 7.2 扩展图片尺寸
-        # img = cv2.copyMakeBorder(t_img, 96, 96, 67, 68, cv2.BORDER_CONSTANT,value = [0, 0, 0])
-        
-        # 7.3 扩展图片尺寸、二值化、降噪
-        if text[5:] == 'png':
-            img = cv2.copyMakeBorder(img, 5, 0, 18, 0, cv2.BORDER_CONSTANT, value = [0,0,0])
-            _, img = cv2.threshold(img, 30, 255, cv2.THRESH_BINARY)
-        else:
-            img = cv2.copyMakeBorder(img, 0, 0, 1, 0, cv2.BORDER_CONSTANT, value = [0,0,0])
-            img = binaryzation_denoise(img)
+        # img preprocess
+        pass
 
         text = text[:4]
         # print(text)
@@ -91,10 +79,7 @@ def next_batch_validation(batch_count=350, width=CAPTCHA_WIDTH, height=CAPTCHA_H
         text = imgs[i]
         
         img = cv2.imread(data_dir + text,cv2.IMREAD_GRAYSCALE)
-
-        # # 7.2 扩展图片尺寸
-        # img = cv2.copyMakeBorder(t_img, 96, 96, 67, 68, cv2.BORDER_CONSTANT,value = [255, 255, 255])
-    
+ 
         # 7.3 扩展图片尺寸、二值化、降噪
         if text[5:] == 'png':
             img = cv2.copyMakeBorder(img, 5, 0, 18, 0, cv2.BORDER_CONSTANT, value = [0,0,0])
@@ -111,7 +96,7 @@ def next_batch_validation(batch_count=350, width=CAPTCHA_WIDTH, height=CAPTCHA_H
 def text2vec(text, captcha_len = CAPTCHA_LEN, captcha_list = CAPTCHA_LIST):
     text_len = len(text)
     if text_len > captcha_len:
-        raise ValueError('验证码最长4个字符')
+        raise ValueError('')
     vector = np.zeros(captcha_len * len(captcha_list))
     for i in range(text_len): 
         vector[captcha_list.index(text[i]) + i * len(captcha_list)] = 1
@@ -236,7 +221,7 @@ def train(height=CAPTCHA_HEIGHT, width=CAPTCHA_WIDTH, y_size=len(CAPTCHA_LIST)*C
             print(datetime.now().strftime('%c'), ' step:', step, ' accuracy:', acc)
             # 偏差满足要求，保存模型
             if acc > acc_rate:
-                model_path = os.getcwd() + os.sep + str(acc_rate) + "/MModel/captcha.model"
+                model_path = os.getcwd() "/captcha.model"
                 saver.save(sess, model_path, global_step=step)
                 acc_rate += 0.01
                 if acc_rate > 0.99: break

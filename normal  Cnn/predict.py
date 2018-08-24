@@ -29,10 +29,7 @@ def captcha2text(image_list, height=CAPTCHA_HEIGHT, width=CAPTCHA_WIDTH):
     # import saver
     saver = tf.train.Saver()
     kkk = os.getcwd()
-    if os.path.exists(kkk+'/MModel/checkpoint'):
-        kkk = kkk + '/MModel'
-    else:
-        kkk = kkk + '/NModel'
+        
     # 开始会话
     # start session
     with tf.Session() as sess:
@@ -61,9 +58,6 @@ def predict(data_d = DATA_DIR, bin_d = BIN_DIR):
     # file operation, 
     # img stored in /test, after predict, put img in /trash_bin. 
 
-    # data_dir = '/Users/jay_fu/Catpatch/test/'
-    # bin_dir = '/Users/jay_fu/Catpatch/trash_bin/'
-    # training_dir = '/Users/jay_fu/Catpatch/training'
     file_type_list = ['jpg', 'png', 'JPG', 'PNG']
     # pre_list = []
     data_dir = data_d
