@@ -9,6 +9,7 @@ edit until 18.8.23, this  repository include 2 part, one is a normal Cnn, which 
 as for how to implemente this two part, i would introduce bellow.
 
 ###normal cnn
+
 this part used to recognize text from captcha, there is a preprocess.py used to preprocess these captcha imgs.
 
 you can find a data_dir at CnnN.py line 55, which used to store training data and somewhere else is validation data, store them in two file folder, and run CnnN.py for training.
@@ -17,6 +18,7 @@ you can find a data_dir at CnnN.py line 55, which used to store training data an
 after training, predict.py helps on predict the text from captcha img. also, there is data_dir, store imgs in that dir and run some py file call function predict().
 
 ###fater rcnn
+
 this part uesd to objection locating. the way to implement this project written by dBeker, you can read the README in the project.
 
 this part can only run on windows, advice environment is tensorflow 1.4 and python 3.5, CUDA8.
