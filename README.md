@@ -13,6 +13,7 @@ this part used to recognize text from captcha, there is a preprocess.py used to 
 
 you can find a data_dir at CnnN.py line 55, which used to store training data and somewhere else is validation data, store them in two file folder, and run CnnN.py for training.
 
+
 after training, predict.py helps on predict the text from captcha img. also, there is data_dir, store imgs in that dir and run some py file call function predict().
 
 ###fater rcnn
