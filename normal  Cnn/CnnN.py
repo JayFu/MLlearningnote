@@ -222,7 +222,7 @@ def train(height=CAPTCHA_HEIGHT, width=CAPTCHA_WIDTH, y_size=len(CAPTCHA_LIST)*C
             print(datetime.now().strftime('%c'), ' step:', step, ' accuracy:', acc)
             # 偏差满足要求，保存模型
             if acc > acc_rate:
-                model_path = os.getcwd() "/captcha.model"
+                model_path = os.getcwd("/captcha.model")
                 saver.save(sess, model_path, global_step=step)
                 acc_rate += 0.01
                 if acc_rate > 0.99: break
