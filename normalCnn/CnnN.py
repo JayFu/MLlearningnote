@@ -60,7 +60,7 @@ def next_batch(batch_count=100, width=CAPTCHA_WIDTH, height=CAPTCHA_HEIGHT):
         text = imgs[i]
         # if i % 10 == 0 : print(text)
         img = cv2.imread(data_dir + text,cv2.IMREAD_GRAYSCALE)
-       
+
         # img preprocess
         pass
 

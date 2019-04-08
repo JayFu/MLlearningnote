@@ -1,10 +1,9 @@
 # MLlearningnote
 note for starting studying machine learning from 04/18
 
-
 this is a learning note about tensorflow learning.
 
-edit until 18.8.23, this  repository include 2 part, one is a normal Cnn, which in [normal cnn](https://github.com/JayFu/MLlearningnote/tree/master/normal%20%20Cnn), and another is a faster RCNN, which is edit by dBeker [faster rcnn on windows](https://github.com/dBeker/Faster-RCNN-TensorFlow-Python3.5) and in [faster rcnn on windows](https://github.com/JayFu/MLlearningnote/tree/master/faster%20Rcnn%20on%20Windows)
+edit until 18.8.23, this  repository include 2 achieved part, one is a normal Cnn, which in [normal cnn](https://github.com/JayFu/MLlearningnote/tree/master/normal%20%20Cnn), and another is a faster RCNN, which is edit by dBeker [faster rcnn on windows](https://github.com/dBeker/Faster-RCNN-TensorFlow-Python3.5) and in [faster rcnn on windows](https://github.com/JayFu/MLlearningnote/tree/master/faster%20Rcnn%20on%20Windows)
 
 as for how to implemente this two part, i would introduce bellow.
 
