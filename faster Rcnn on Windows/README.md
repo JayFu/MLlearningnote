@@ -1,5 +1,11 @@
 # tf-faster-rcnn
-## said by origin editor:
+
+## by Jay FU
+acturally, I only edit the demo.py, and change the name of origin demo.py into demo_bk.py.
+the demo() funtion in new demo.py will return the coordinate of center point of each object.
+If you wanna use this branch, you should change classes in every code file
+
+## by origin editor:
 Tensorflow Faster R-CNN for Windows by using Python 3.5 
 
 This is the branch to compile Faster R-CNN on Windows. It is heavily inspired by the great work done [here](https://github.com/smallcorgi/Faster-RCNN_TF) and [here](https://github.com/rbgirshick/py-faster-rcnn). I have not implemented anything new but I fixed the implementations for Windows and Python 3.5.
@@ -36,10 +42,6 @@ I will be glad if you can contribute with a batch script to automatically downlo
   
   Notify me if there is any issue found. Please note that, I have compiled cython modules with sm61 architecture (GTX 1060, 1070 etc.). Compile support for other architectures will be added. 
  
-## said by Jay FU
-acturally, I only edit the demo.py, and change the name of origin demo.py into demo_bk.py.
-the demo() funtion in new demo.py will return the coordinate of center point of each object.
-If you wanna use this branch, you should change classes in every code file
-
+ 
 ## 中文引注
 这是第一个实际的在CUDA环境下跑的项目，项目需要，所以把demo.py中打印图片改成了返回中心点坐标。如果要使用这些文件，需要注意将所有源文件的classes属性修改。
